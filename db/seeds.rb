@@ -19,3 +19,4 @@ User.create!(name: "David Landers", email: "davidLanders@gmail.com", password: "
 User.create!(name: "Stephanie Hlaing", email: "stephanieHlaing@gmail.com", password: "123123")
 User.create!(name: "Pedro Gonzales", email: "pedroGonzales@gmail.com", password: "123123")
 User.create!(name: "Elsa Disney", email: "elsaDisney@gmail.com", password: "123123")
+User.create!(name: "Greg Masters", email: "gregMasters@gmail.com", password: "123123")
