@@ -1,0 +1,18 @@
+<div class="card-home">
+  <% if art_class.photo.attached? %>
+    <%= cl_image_tag art_class.photo.key %>
+  <% else %>
+    <%= image_tag 'art.jpg' %>
+  <% end %>
+  <div class="card-home-infos">
+    <div>
+      <p><%= art_class.category %></p>
+      <h2><%= link_to art_class.title, art_class_path(art_class), class: 'text-decoration-none', title: art_class.title %></h2>
+      <p><%= art_class.dates %></p>
+      <p><%= art_class.location %></p>
+      <p><%= art_class.description %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= art_class.price %></h2>
+  </div>
+  <%= link_to "", art_class_path(art_class), class: 'card-home-link' %>
+</div>
