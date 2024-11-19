@@ -1,5 +1,5 @@
 <%= render "banner" %>
-<div class="container text-center my-3">
+<div class="container text-center my-4">
   <h2>Upcoming Classes</h2>
   <div class="cards mt-2 mb-5">
     <% @art_classes_samples.each do |art_class| %>
@@ -8,8 +8,17 @@
   </div>
   <h2>Categories</h2>
   <div class="cards mt-2 mb-5">
-    <% @art_classes_samples.each do |art_class| %>
-      <%= render "card_home", art_class: art_class %>
-    <% end %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "pottery.jpg" %>')">
+      <h2><%= link_to "Pottery", art_classes_path(category: 'pottery'), class: 'text-decoration-none' %></h2>
+      <%= link_to "", art_classes_path(category: 'pottery'), class: 'card-home-link' %>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "painting.jpg" %>')">
+      <h2><%= link_to "Oil Painting", art_classes_path(category: 'oil painting'), class: 'text-decoration-none' %></h2>
+      <%= link_to "", art_classes_path(category: 'oil painting'), class: 'card-home-link' %>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "sketching.jpg" %>')">
+      <h2><%= link_to "Sketching", art_classes_path(category: 'sketching'), class: 'text-decoration-none' %></h2>
+      <%= link_to "", art_classes_path(category: 'sketching'), class: 'card-home-link' %>
+    </div>
   </div>
 </div>

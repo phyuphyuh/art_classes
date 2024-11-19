@@ -12,6 +12,7 @@ class ArtClassesController < ApplicationController
   end
 
   def new
+    @art_class = ArtClass.new
   end
 
   def create
