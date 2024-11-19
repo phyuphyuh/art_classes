@@ -1,0 +1,16 @@
+<div class="container">
+    
+    <h1> Hello! </h1>
+    <div class="cards">
+        <% @art_classes.each do |art_class|  %>
+          <div class="card-product" >
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" width="200" height="400">
+             
+            <div class="card-product-infos">
+              <h2><%= art_class.title %></h2>
+              <p><%= art_class.description%></p>
+            </div>
+        </div>
+        <% end %>  
+    </div>
+</div>

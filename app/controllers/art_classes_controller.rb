@@ -1,5 +1,6 @@
 class ArtClassesController < ApplicationController
   def index
+    @art_classes = ArtClass.all
   end
 
   def show
