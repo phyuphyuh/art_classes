@@ -9,6 +9,10 @@
 #   end
 # CATEGORIES ["Oil Painting", "Pottery", "Watercolor", "Manga", "Sculpture", "DIY", "Acryllic", "Still Life", "Sketching", "Other"]
 
+ArtClass.destroy_all
+User.destroy_all
+# Reservation.destroy_all
+
 User.create!(name: "James Smith", email: "jamesSmith@gmail.com", password: "123123")
 User.create!(name: "Paula Ortega", email: "paulaOrtega@gmail.com", password: "123123")
 User.create!(name: "Frederick Elias", email: "frederickElias@gmail.com", password: "123123")
@@ -21,3 +25,21 @@ User.create!(name: "Pedro Gonzales", email: "pedroGonzales@gmail.com", password:
 User.create!(name: "Elsa Disney", email: "elsaDisney@gmail.com", password: "123123")
 User.create!(name: "Greg Masters", email: "gregMasters@gmail.com", password: "123123")
 User.create!(name: "Claudia Ordonez", email: "claudiaOrdonez@gmail.com", password: "123123")
+claudia = User.last
+
+
+ArtClass.create!(title: "Pottery Garden", description: "A nice class under the bright sun", price: 2000, category: "Pottery", location: "Tokyo", dates: "24/12/25", user: claudia)
+
+ArtClass.create!(title: "Blue Watercolors", description: "Who doesn't like color blue? Join us just using that pretty color in our original class", price: 2500, category: "Watercolor", location: "Kyoto", dates: "25/02/27", user: User.all.sample)
+
+ArtClass.create!(title: "Shonen as old times", description: "Does anybody remember the good classics? Astroboy, Akira, Dororo... let's bring those times back in this workshop! ", price: 5000, category: "Manga", location: "Kyoto", dates: "25/02/27", user: User.all.sample)
+
+ArtClass.create!(title: "Yarn and smiles", description: "Winter is coming soon and presents are a headache. Won't you prefer saving some money making your own sweaters? Join us!", price: 1800, category: "DIY", location: "Kyoto", dates: "25/02/27", user: User.all.sample)
+
+ArtClass.create!(title: "Firefighters", description: "This is very exclusive event where you'll have the opportunity to scupt some good boddies", price: 1800, category: "DIY", location: "Kyoto", dates: "25/02/27", user: User.all.sample)
+
+
+Reservation.create!(art_class: ArtClass.all.sample, user: User.all.sample, status: "pending")
+Reservation.create!(art_class: ArtClass.all.sample, user: User.all.sample, status: "accepted")
+Reservation.create!(art_class: ArtClass.all.sample, user: User.all.sample, status: "rejected")
+Reservation.create!(art_class: ArtClass.all.sample, user: User.all.sample, status: "pending")
