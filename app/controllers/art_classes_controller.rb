@@ -1,6 +1,10 @@
 class ArtClassesController < ApplicationController
   def index
-    @art_classes = ArtClass.all
+    if params[:category].present?
+      @art_classes = ArtClass.where(category: params[:category])
+    else
+      @art_classes = ArtClass.all
+    end
   end
 
   def show

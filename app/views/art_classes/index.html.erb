@@ -1,15 +1,18 @@
 <div class="container">
-    <h1> Hello! </h1>
-    <div class="cards">
-        <% @art_classes.each do |art_class|  %>
-          <div class="card-product" >
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" width="200" height="400">
+  <div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFKWjY7ba8/1/0/1600w/canva-pink-abstract-watercolor-zoom-virtual-background-eWdcNlqbr_4.jpg)">
+    <h1> Available classes </h1>
+  </div>
 
-            <div class="card-product-infos">
-              <h2><%= art_class.title %></h2>
-              <p><%= art_class.description%></p>
-            </div>
-        </div>
-        <% end %>
+  <div class="cards" >
+    <% @art_classes.each do |art_class|  %>
+      <div class="card-product" >
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" width="200" height="400"> 
+          <div class="card-product-infos">
+            <h2> <%= art_class.title %> </h2>
+            <p> <%= art_class.description%> </p>
+          </div>
+        <%= link_to "", art_class_path(art_class) %>
+      </div>
+       <% end %>  
     </div>
 </div>
