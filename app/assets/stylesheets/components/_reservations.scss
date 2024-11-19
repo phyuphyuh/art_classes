@@ -1,9 +1,24 @@
-.profile-box {
+.parent-box{
   display:flex;
-  width: 50%;
+}
+.profile-box {
+  margin-left: 2%;
+  margin-right: 4%;
+  width: 30%;
+  background-color: aliceblue;
+}
+
+.user-info {
+  background-color: bisque;
 }
 
 .reservation-box {
-  display: flex;
-  width: 50%;
+  margin-right: 2%;
+  width: 70%;
+  background-color: aliceblue;
+}
+
+.user-img {
+  background-color: aquamarine;
+  width: 100%;
 }

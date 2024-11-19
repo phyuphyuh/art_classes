@@ -1,8 +1,6 @@
 <div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFKWjY7ba8/1/0/1600w/canva-pink-abstract-watercolor-zoom-virtual-background-eWdcNlqbr_4.jpg)">
   <h1><%= @artclass.title %></h1>
 </div>
-
-
 <div class= "showpage-body">
   <div class="event-description">
     <img src="https://img.activityjapan.com/wi/tokyo-ceramics-plan_thumb.jpg?202407240214&cf_origin" class="img-fluid" alt="pottery-img">
@@ -16,12 +14,11 @@
     <div class="div5"><%= @artclass.dates %></div>
   </div>
 </div>
-
-<nav class="bottom-navbar">
+<nav class="bottom-navpbar">
   <form class="container-fluid justify-content-end">
-     <form class="container-fluid justify-content-start">
-        <%= link_to "Home", art_classes_path, class: "btn btn-primary"%>
-      </form>
+    <form class="container-fluid justify-content-start">
+      <%= link_to "Home", art_classes_path, class: "btn btn-primary"%>
+    </form>
     <button class="btn btn-outline-success me-2" type="button">Attend</button>
     <button class="btn btn-sm btn-outline-secondary" type="button">Contact</button>
   </form>
