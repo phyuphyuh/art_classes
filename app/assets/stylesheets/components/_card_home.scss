@@ -9,10 +9,16 @@
     width: 100%;
     object-fit: cover;
   }
+  &:hover h2 a {
+    opacity: 0.8;
+  }
   h2 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     margin: 0;
+    a {
+      color: rgb(72, 72, 72);
+    }
   }
   p {
     font-size: 12px;
