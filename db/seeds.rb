@@ -39,7 +39,7 @@ ArtClass.create!(title: "Yarn and smiles", description: "Winter is coming soon a
 ArtClass.create!(title: "Firefighters", description: "This is very exclusive event where you'll have the opportunity to scupt some good boddies", price: 1800, category: "DIY", location: "Kyoto", dates: "25/02/27", user: User.all.sample)
 
 
-Reservation.create!(art_class: ArtClass.all.sample, user: User.all.sample, status: "pending")
+Reservation.create!(art_class: ArtClass.all.sample, user: claudia, status: "accepted")
 Reservation.create!(art_class: ArtClass.all.sample, user: User.all.sample, status: "accepted")
 Reservation.create!(art_class: ArtClass.all.sample, user: User.all.sample, status: "rejected")
 Reservation.create!(art_class: ArtClass.all.sample, user: User.all.sample, status: "pending")
