@@ -3,6 +3,7 @@ class ArtClassesController < ApplicationController
   end
 
   def show
+    @artclass = ArtClass.find(params[:id])
   end
 
   def new
