@@ -1,0 +1,29 @@
+.showpage-body {
+  display: flex;
+}
+
+.event-description {
+  width: 70%;
+  margin-right: 4%;
+  margin-left: 2%;
+  background-color: gray;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: 300px;
+}
+
+.price-tag-navbar {
+  display:flex
+}
+
+.event-location {
+  width: 30%;
+  margin-right: 2%;
+  background-color: aquamarine;
+}
+
+.bottom-navbar{
+  display: flex;
+}
