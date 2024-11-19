@@ -6,12 +6,13 @@
   width: 70%;
   margin-right: 4%;
   margin-left: 2%;
-  background-color: gray;
+  margin-bottom: 4%;
+  background-color: rgb(203, 203, 203);
+
 }
 
 .img-fluid {
   max-width: 100%;
-  height: 300px;
 }
 
 .price-tag-navbar {
@@ -21,7 +22,9 @@
 .event-location {
   width: 30%;
   margin-right: 2%;
-  background-color: aquamarine;
+  background-color: rgb(203, 203, 203);
+  box-shadow: 1px;
+  margin-bottom: 4%;
 }
 
 .bottom-navbar{
