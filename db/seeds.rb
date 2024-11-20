@@ -7,11 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-# CATEGORIES ["Oil Painting", "Pottery", "Watercolor", "Manga", "Sculpture", "DIY", "Acryllic", "Still Life", "Sketching", "Other"]
+require "open-uri"
+require 'nokogiri'
 
 ArtClass.destroy_all
 User.destroy_all
-# Reservation.destroy_all
+Reservation.destroy_all
 
 #Seeds for users
 
@@ -27,6 +28,21 @@ pedro = User.create!(name: "Pedro Gonzales", email: "pedroGonzales@gmail.com", p
 elsa = User.create!(name: "Elsa Disney", email: "elsaDisney@gmail.com", password: "123123")
 greg = User.create!(name: "Greg Masters", email: "gregMasters@gmail.com", password: "123123")
 claudia = User.create!(name: "Claudia Ordonez", email: "claudiaOrdonez@gmail.com", password: "123123")
+
+#attach photos to users
+users = User.all
+gender = 'male'
+age = 'all'
+ethnicity = 'all'
+url = "https://this-person-does-not-exist.com/new?gender=#{gender}&age=#{age}&etnic=#{ethnicity}"
+
+users.map do |user|
+  json = URI.open(url).string
+  src = JSON.parse(json)['src']
+  photo_url = "https://this-person-does-not-exist.com#{src}"
+  file = URI.open(photo_url)
+  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+end
 
 #Seeds for art classes
 
@@ -95,6 +111,7 @@ file = URI.parse("https://www.metier.org/wp-content/uploads/2022/06/realisation-
 manga3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 manga3.save
 
+#Seeds for art classes
 manga4 = ArtClass.create!(title: "Inking and Tonal Techniques", description: "Master inking techniques and learn to use screen tones to add depth and emotion to your manga artwork. Suitable for intermediate and advanced artists.", price: 6000, category: "Manga", location: "Tokyo", dates: "25/02/21", user: sakura)
 file = URI.parse("https://www.metier.org/wp-content/uploads/2022/06/realisation-dessins-manga.jpeg").open
 manga4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
