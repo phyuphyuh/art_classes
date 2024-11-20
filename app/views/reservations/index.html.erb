@@ -5,6 +5,7 @@
   <div class="title2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFBjD0targ/1/0/1600w/canva-green-and-white-watercolor-wallpaper-background--Nv3M-EEvzc.jpg)">
     <h1>Welcome, <%= current_user.name %>!</h1>
   </div>
+
   <div class= "parent-box">
     <div>
       <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
@@ -14,6 +15,7 @@
         <% current_user.reservations.each do |reservation|%>
           <%= render "reservations/card", reservation: reservation %>
         <% end %>
+
       </div>
       <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
         <h1>Lessons I'm teaching</h1>

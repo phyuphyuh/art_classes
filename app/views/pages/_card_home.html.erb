@@ -5,16 +5,18 @@
     <%= image_tag 'art.jpg' %>
   <% end %>
   <div class="card-home-infos">
-    <div>
+    <div class="card-home-info">
       <h3><%= art_class.category %></h3>
       <h2><%= link_to art_class.title, art_class_path(art_class), class: 'text-decoration-none', title: art_class.title %></h2>
-      <div class="d-flex flex-row justify-content-around my-2">
+      <div class="d-flex flex-row justify-content-around mt-3">
         <p><%= art_class.dates %></p>
         <p><%= art_class.location %></p>
       </div>
-      <p><%= art_class.description %></p>
+      <p class="card-home-description"><%= art_class.description %></p>
     </div>
-    <h2 class="card-home-pricing"><%= art_class.price %></h2>
+    <h2 class="card-home-pricing"><%= number_to_currency(art_class.price, { unit: '¥', precision: 0 }) %></h2>
+    <%= cl_image_tag art_class.user.photo.key , class: "card-home-user avatar-bordered" %>
+    <p class="card-home-user-name"><%= art_class.user.name %></p>
   </div>
   <%= link_to "", art_class_path(art_class), class: 'card-home-link' %>
 </div>
