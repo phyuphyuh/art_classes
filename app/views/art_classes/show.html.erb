@@ -1,26 +1,29 @@
 <div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFKWjY7ba8/1/0/1600w/canva-pink-abstract-watercolor-zoom-virtual-background-eWdcNlqbr_4.jpg)">
   <h1><%= @art_class.title %></h1>
 </div>
-<div class= "showpage-body">
-  <div class="event-description">
-    <%= cl_image_tag @art_class.photo.key, height: 300, width: 700, crop: :fill %>
-    <div class= "price-tag-navbar">
-      <div class="div2"><%= @art_class.price%> <%= @art_class.category %></div>
+<div class= "container">
+  <div class= "row">
+    <div class= "col-6">
+      <div class="card-simple">
+        <%= cl_image_tag @art_class.photo.key, class: "w-100" %>
+        <div class="card-simple-text">
+          <div class="price-tag">¥<%= @art_class.price %></div>
+          <div>
+            <h2><%= @art_class.title %></h2>
+            <p><%= @art_class.description %></p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="text-description"><%= @art_class.description %></div>
-  </div>
-  <div class="event-location">
-    <div class="div4"><%= @art_class.location %></div>
-    <div class="div5"><%= @art_class.dates %></div>
+    <div class= "col-6">
+      <div>
+        <img src="https://japanalytic.com/wp-content/uploads/2021/01/Screen-Shot-2021-01-28-at-6.33.23-PM-816x764.png" class="img-fluid"alt="Responsive image" >
+      </div>
+    </div>
   </div>
 </div>
 <nav class="bottom-navbar">
   <form class="container-fluid justify-content-end">
-    <form class="container-fluid justify-content-start">
-      <%= link_to "Home", art_classes_path, class: "btn btn-primary"%>
-    </form>
-    <%# <link class="btn btn-outline-success me-2" type="button">Attend</button> %>
-    <%# <%= link_to "Attend",reservations_path(@reservation), class: "btn btn-outline-success", input_html: { method: "post" } %>
     <%= simple_form_for [@art_class, @reservation] do |f| %>
       <%= f.submit class: 'submit-btn' %>
     <% end %>

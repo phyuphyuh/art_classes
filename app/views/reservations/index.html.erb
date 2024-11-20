@@ -1,48 +1,30 @@
 <div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFKWjY7ba8/1/0/1600w/canva-pink-abstract-watercolor-zoom-virtual-background-eWdcNlqbr_4.jpg)">
   <h1>My Reservations</h1>
 </div>
-<div class= "parent-box">
-  <div class= "profile-box">
-    <div class= "user-img">
-      <p>Photo</p>
-    </div>
-    <div class= "user-info">
-      <p>Welcome, <%= current_user.name %>! </p>
+<div class= "container">
+  <div class="title2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFBjD0targ/1/0/1600w/canva-green-and-white-watercolor-wallpaper-background--Nv3M-EEvzc.jpg)">
+    <h1>Welcome, <%= current_user.name %>!</h1>
+  </div>
+
+  <div class= "parent-box">
+    <div>
+      <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
+        <h1>Lessons I'm attending</h1>
+      </div>
+      <div class= "cards-small">
+        <% current_user.reservations.each do |reservation|%>
+          <%= render "reservations/card", reservation: reservation %>
+        <% end %>
+
+      </div>
+      <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
+        <h1>Lessons I'm teaching</h1>
+      </div>
+      <div class= "cards-small">
+        <% current_user.reservations_as_teacher.each do |reservation|%>
+          <%= render "reservations/card", reservation: reservation %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class= "cards-small">
-    <% current_user.reservations.each do |reservation|%>
-      <div class="card-simple">
-        <%= cl_image_tag reservation.art_class.photo.key, height: 300, width: 700, crop: :fill %>
-        <div class="card-simple-tags">
-          <span class="tag-green"><%= reservation.art_class.category %><%= reservation.status %></span><span class="tag-orange"></span>
-        </div>
-        <div class="card-simple-text">
-          <div class="price-tag">¥<%= reservation.art_class.price %></div>
-          <div>
-            <h2><%= reservation.art_class.title %></h2>
-            <p><%= reservation.art_class.description %></p>
-          </div>
-          <%= link_to "Details", art_class_path(reservation.art_class) %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <div class= "cards-small">
-    <% current_user.reservations_as_teacher.each do |reservation|%>
-      <div class="card-simple">
-        <%= cl_image_tag reservation.art_class.photo.key, height: 300, width: 400, crop: :fill %>
-        <span class="tag-green"><%= reservation.art_class.category %></span><span class="tag-orange"><%= reservation.status %></span>
-      </div>
-      <div class="card-simple-text">
-        <div class="price-tag">¥<%= reservation.art_class.price %></div>
-        <div>
-          <h2><%= reservation.art_class.title %></h2>
-          <p><%= reservation.art_class.description %></p>
-        </div>
-        <%= link_to "Details", art_class_path(reservation.art_class) %>
-      </div>
-    </div>
-  <% end %>
-</div>
 </div>
