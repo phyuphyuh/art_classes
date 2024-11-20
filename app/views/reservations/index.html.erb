@@ -12,6 +12,7 @@
   </div>
   <div class= "cards-small">
     <% current_user.reservations.each do |reservation|%>
+
       <div class="card-simple">
         <%= cl_image_tag reservation.art_class.photo.key, height: 300, width: 700, crop: :fill %>
         <div class="card-simple-tags">
@@ -22,6 +23,7 @@
           <div>
             <h2><%= reservation.art_class.title %></h2>
             <p><%= reservation.art_class.description %></p>
+
           </div>
           <%= link_to "Details", art_class_path(reservation.art_class) %>
         </div>
