@@ -1,12 +1,11 @@
-
 <div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFKWjY7ba8/1/0/1600w/canva-pink-abstract-watercolor-zoom-virtual-background-eWdcNlqbr_4.jpg)">
   <h1> Available classes </h1>
 </div>
-
+<%= render "pages/category_link" %>
 <div class="container my-4">
   <div class="cards mt-2 mb-5">
-      <% @art_classes.each do |art_class|  %>
-        <%= render "pages/card_home", art_class: art_class %>
-      <% end %>
-  </div>   
+    <% @art_classes.each do |art_class|  %>
+      <%= render "pages/card_home", art_class: art_class %>
+    <% end %>
+  </div>
 </div>

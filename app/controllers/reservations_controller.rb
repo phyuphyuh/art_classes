@@ -18,8 +18,18 @@ class ReservationsController < ApplicationController
   end
 
   def update
+    # @reservation = Reservation.find(params[:id])
+    # if @reservation.update(reservation_params)
+    #   redirect_to reservations_path
+    # else
+    #   render
+    # end
   end
 
   def destroy
   end
+
+  # def reservation_params
+  #   params.require(:booking).permit(:status)
+  # end
 end
