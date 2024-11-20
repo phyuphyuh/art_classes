@@ -1,0 +1,14 @@
+<div class="card-simple">
+  <%= cl_image_tag reservation.art_class.photo.key, class: "w-100" %>
+  <div class="card-simple-tags">
+    <span class="tag-green"><%= reservation.art_class.category %><%= reservation.status %></span>
+  </div>
+  <div class="card-simple-text">
+    <div class="price-tag">¥<%= reservation.art_class.price %></div>
+    <div>
+      <h2><%= reservation.art_class.title %></h2>
+      <p><%= reservation.art_class.description %></p>
+    </div>
+    <%= link_to "Details", art_class_path(reservation.art_class) %>
+  </div>
+</div>
