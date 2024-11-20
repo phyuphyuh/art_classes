@@ -7,11 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-# CATEGORIES ["Oil Painting", "Pottery", "Watercolor", "Manga", "Sculpture", "DIY", "Acryllic", "Still Life", "Sketching", "Other"]
+require "open-uri"
+require 'nokogiri'
 
 ArtClass.destroy_all
 User.destroy_all
-# Reservation.destroy_all
+Reservation.destroy_all
 
 james = User.create!(name: "James Smith", email: "jamesSmith@gmail.com", password: "123123")
 paula = User.create!(name: "Paula Ortega", email: "paulaOrtega@gmail.com", password: "123123")
@@ -27,6 +28,23 @@ User.create!(name: "Greg Masters", email: "gregMasters@gmail.com", password: "12
 User.create!(name: "Claudia Ordonez", email: "claudiaOrdonez@gmail.com", password: "123123")
 claudia = User.last
 
+#attach photos to users
+users = User.all
+gender = 'male'
+age = 'all'
+ethnicity = 'all'
+url = "https://this-person-does-not-exist.com/new?gender=#{gender}&age=#{age}&etnic=#{ethnicity}"
+
+users.map do |user|
+  json = URI.open(url).string
+  src = JSON.parse(json)['src']
+  photo_url = "https://this-person-does-not-exist.com#{src}"
+  file = URI.open(photo_url)
+  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+end
+
+
+#Seeds for art classes
 
 ArtClass.create!(title: "Pottery Garden", description: "A nice class under the bright sun", price: 2000, category: "Pottery", location: "Tokyo", dates: "24/12/25", user: claudia)
 
