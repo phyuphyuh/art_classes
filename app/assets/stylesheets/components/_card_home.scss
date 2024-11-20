@@ -3,18 +3,26 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
+  text-align: left;
 
   img {
     height: 280px;
     width: 100%;
     object-fit: cover;
   }
-  &:hover h2 a {
+  &:hover {
     opacity: 0.8;
+    a {
+      opacity: 0.8;
+    }
+  }
+  h3 {
+    font-size: 18px;
+    margin: 0 0 8px;
   }
   h2 {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: medium;
     margin: 0;
     a {
       color: rgb(72, 72, 72);
@@ -23,24 +31,42 @@
   p {
     font-size: 12px;
     opacity: .7;
-    margin: 0;
   }
 
   .card-home-infos {
-    height: 180px;
+    height: 256px;
     padding: 16px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
-  }
-}
 
-.card-home-infos .card-home-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+    .card-home-info {
+      margin: 0 0 8px;
+    }
+    .card-home-description {
+      height: 64px;
+    }
+    .card-home-pricing {
+      position: absolute;
+      right: 16px;
+      bottom: 10px;
+      font-size: 16px;
+    }
+    .card-home-user {
+      position: absolute;
+      right: 16px;
+      top: -20px;
+      width: 40px;
+      height: 40px;
+    }
+    .card-home-user-name {
+      position: absolute;
+      right: 8px;
+      top: 24px;
+    }
+  }
 }
 
 .card-home-link {

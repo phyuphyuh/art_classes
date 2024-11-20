@@ -1,0 +1,74 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon py-1">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse container" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto cat">
+        <%# <li class="navbar-brand">
+          <p>Categories</p>
+        </li> %>
+        <li class="nav-item cat-link">
+          <%= link_to art_classes_path(category: 'Pottery'), class: 'text-decoration-none' do %>
+            <i class="fa-solid fa-mug-saucer"></i>
+            <p>Pottery</p>
+          <% end %>
+        </li>
+        <li class="nav-item cat-link">
+          <%= link_to art_classes_path(category: 'Oil Painting'), class: 'text-decoration-none' do %>
+            <i class="fa-solid fa-paintbrush"></i>
+            <p>Oil Painting</p>
+          <% end %>
+        </li>
+        <li class="nav-item cat-link">
+          <%= link_to art_classes_path(category: 'Watercolor'), class: 'text-decoration-none' do %>
+            <i class="fa-solid fa-palette"></i>
+            <p>Watercolor</p>
+          <% end %>
+        </li>
+        <li class="nav-item cat-link">
+          <%= link_to art_classes_path(category: 'Acrylic'), class: 'text-decoration-none' do %>
+            <i class="fa-solid fa-brush"></i>
+            <p>Acrylic</p>
+          <% end %>
+        </li>
+        <li class="nav-item cat-link">
+          <%= link_to art_classes_path(category: 'Sketching'), class: 'text-decoration-none' do %>
+            <i class="fa-solid fa-pencil"></i>
+            <p>Sketching</p>
+          <% end %>
+        </li>
+        <li class="nav-item cat-link">
+          <%= link_to art_classes_path(category: 'Still Life'), class: 'text-decoration-none' do %>
+            <i class="fa-solid fa-apple-whole"></i>
+            <p>Still Life</p>
+          <% end %>
+        </li>
+        <li class="nav-item cat-link">
+          <%= link_to art_classes_path(category: 'Sculpture'), class: 'text-decoration-none' do %>
+            <i class="fa-solid fa-building-columns"></i>
+            <p>Sculpture</p>
+          <% end %>
+        </li>
+        <li class="nav-item cat-link">
+          <%= link_to art_classes_path(category: 'Manga'), class: 'text-decoration-none' do %>
+            <i class="fa-regular fa-pen-to-square"></i>
+            <p>Manga</p>
+          <% end %>
+        </li>
+        <li class="nav-item cat-link">
+          <%= link_to art_classes_path(category: 'DIY'), class: 'text-decoration-none' do %>
+            <i class="fa-regular fa-paper-plane"></i>
+            <p>DIY</p>
+          <% end %>
+        </li>
+        <li class="nav-item cat-link">
+          <%= link_to art_classes_path(category: 'Other'), class: 'text-decoration-none' do %>
+            <i class="fa-solid fa-face-smile"></i>
+            <p>Other</p>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
