@@ -11,6 +11,7 @@ class ArtClassesController < ApplicationController
   def show
     @art_class = ArtClass.find(params[:id])
     @reservation = Reservation.new
+    @price = number_to_currency(@art_class.price, { unit: '¥', precision: 0 })
   end
 
   def new
