@@ -147,27 +147,27 @@ file = URI.parse("https://dam.thdstatic.com/content/production/8fWh0YKc2ioe0bI7R
 diy5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 diy5.save
 
-sculpture = ArtClass.create!(title: "Clay Sculpting Basics", description: "Discover the fundamentals of clay sculpting. This class covers basic techniques for shaping, carving, and smoothing clay to create simple sculptures like bowls or figurines.", price: 4000, category: "DIY", location: "Tokyo", dates: "25/01/11", user: paula)
+sculpture = ArtClass.create!(title: "Clay Sculpting Basics", description: "Discover the fundamentals of clay sculpting. This class covers basic techniques for shaping, carving, and smoothing clay to create simple sculptures like bowls or figurines.", price: 4000, category: "Sculpture", location: "Tokyo", dates: "25/01/11", user: paula)
 file = URI.parse("https://cdn.domestika.org/c_fill,dpr_auto,f_auto,h_674,pg_1,t_base_params,w_1200/v1700741688/course-covers/000/005/163/5163-original.jpg?1700741688").open
 sculpture.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 sculpture.save
 
-sculpture2 = ArtClass.create!(title: "Abstract Sculptures", description: "Explore your creativity by designing and building abstract sculptures. Learn how to manipulate clay and mixed materials to craft visually striking, modern art pieces.", price: 5500, category: "DIY", location: "Tokyo", dates: "25/01/12", user: paula)
+sculpture2 = ArtClass.create!(title: "Abstract Sculptures", description: "Explore your creativity by designing and building abstract sculptures. Learn how to manipulate clay and mixed materials to craft visually striking, modern art pieces.", price: 5500, category: "Sculpture", location: "Tokyo", dates: "25/01/12", user: paula)
 file = URI.parse("https://bpb-us-w2.wpmucdn.com/blogs.sjsu.edu/dist/a/54/files/2020/12/20201105-142-0020-WSQ_Learning_Together_Series-Hands-On_Classes_in_a_COVID-19_World-Ceramic_Sculpture_RCBain_web.jpg").open
 sculpture2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 sculpture2.save
 
-sculpture3 = ArtClass.create!(title: "Human Figure Sculpting", description: "Dive into the intricacies of human anatomy with figure sculpting. Learn to capture lifelike proportions, muscles, and poses using clay and professional tools.", price: 6800, category: "DIY", location: "Tokyo", dates: "25/01/13", user: paula)
+sculpture3 = ArtClass.create!(title: "Human Figure Sculpting", description: "Dive into the intricacies of human anatomy with figure sculpting. Learn to capture lifelike proportions, muscles, and poses using clay and professional tools.", price: 6800, category: "Sculpture", location: "Tokyo", dates: "25/01/13", user: paula)
 file = URI.parse("https://www.artcenternj.org/wp-content/uploads/2022/06/AdobeStock_7977952web.jpg").open
 sculpture3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 sculpture3.save
 
-sculpture4 = ArtClass.create!(title: "Wood Carving for Beginners", description: "Start your wood carving journey by learning essential techniques for whittling, carving, and sanding. Create stunning wooden sculptures or functional items like spoons.", price: 4500, category: "DIY", location: "Tokyo", dates: "25/01/14", user: paula)
+sculpture4 = ArtClass.create!(title: "Wood Carving for Beginners", description: "Start your wood carving journey by learning essential techniques for whittling, carving, and sanding. Create stunning wooden sculptures or functional items like spoons.", price: 4500, category: "Sculpture", location: "Tokyo", dates: "25/01/14", user: paula)
 file = URI.parse("https://the-nhtg.org.uk/wp-content/uploads/2023/09/artisan-doing-woodcutting-930x620.jpg").open
 sculpture4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 sculpture4.save
 
-sculpture5 = ArtClass.create!(title: "Mixed Media Sculpture", description: "Combine various materials like clay, metal, and found objects to create unique mixed-media sculptures. This class emphasizes experimentation and artistic expression.", price: 7000, category: "DIY", location: "Tokyo", dates: "25/01/15", user: paula)
+sculpture5 = ArtClass.create!(title: "Mixed Media Sculpture", description: "Combine various materials like clay, metal, and found objects to create unique mixed-media sculptures. This class emphasizes experimentation and artistic expression.", price: 7000, category: "Sculpture", location: "Tokyo", dates: "25/01/15", user: paula)
 file = URI.parse("https://thecfa.art/wp-content/uploads/2020/06/edit1-26-of-37-scaled.jpg").open
 sculpture5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 sculpture5.save
