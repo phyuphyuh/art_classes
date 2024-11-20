@@ -9,7 +9,7 @@ class ArtClassesController < ApplicationController
   end
 
   def show
-    @artclass = ArtClass.find(params[:id])
+    @art_class = ArtClass.find(params[:id])
     @reservation = Reservation.new
   end
 

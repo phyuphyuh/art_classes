@@ -1,17 +1,17 @@
 <div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFKWjY7ba8/1/0/1600w/canva-pink-abstract-watercolor-zoom-virtual-background-eWdcNlqbr_4.jpg)">
-  <h1><%= @artclass.title %></h1>
+  <h1><%= @art_class.title %></h1>
 </div>
 <div class= "showpage-body">
   <div class="event-description">
-    <img src="https://img.activityjapan.com/wi/tokyo-ceramics-plan_thumb.jpg?202407240214&cf_origin" class="img-fluid" alt="pottery-img">
+    <%= cl_image_tag @art_class.photo.key, height: 300, width: 700, crop: :fill %>
     <div class= "price-tag-navbar">
-      <div class="div2"><%= @artclass.price%> <%= @artclass.category %></div>
+      <div class="div2"><%= @art_class.price%> <%= @art_class.category %></div>
     </div>
-    <div class="text-description"><%= @artclass.description %></div>
+    <div class="text-description"><%= @art_class.description %></div>
   </div>
   <div class="event-location">
-    <div class="div4"><%= @artclass.location %></div>
-    <div class="div5"><%= @artclass.dates %></div>
+    <div class="div4"><%= @art_class.location %></div>
+    <div class="div5"><%= @art_class.dates %></div>
   </div>
 </div>
 <nav class="bottom-navbar">
@@ -21,7 +21,7 @@
     </form>
     <%# <link class="btn btn-outline-success me-2" type="button">Attend</button> %>
     <%# <%= link_to "Attend",reservations_path(@reservation), class: "btn btn-outline-success", input_html: { method: "post" } %>
-    <%= simple_form_for [@artclass, @reservation] do |f| %>
+    <%= simple_form_for [@art_class, @reservation] do |f| %>
       <%= f.submit class: 'submit-btn' %>
     <% end %>
     <button class="btn btn-sm btn-outline-secondary" type="button">Contact</button>

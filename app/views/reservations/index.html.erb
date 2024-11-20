@@ -1,7 +1,6 @@
 <div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFKWjY7ba8/1/0/1600w/canva-pink-abstract-watercolor-zoom-virtual-background-eWdcNlqbr_4.jpg)">
   <h1>My Reservations</h1>
 </div>
-
 <div class= "parent-box">
   <div class= "profile-box">
     <div class= "user-img">
@@ -11,67 +10,41 @@
       <p>Welcome, <%= current_user.name %>! </p>
     </div>
   </div>
-
   <div class= "cards-small">
     <% current_user.reservations.each do |reservation|%>
-        <div class="card-simple">
-          <img
-            alt="anteloupe canyon"
-            class="card-simple-image"
-            src="https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          />
-          <div class="card-simple-tags">
-            <span class="tag-green"><%= reservation.art_class.category %><%= reservation.status %></span><span class="tag-orange"></span>
-
-          </div>s
-
-          <div class="card-simple-text">
-            <img
-              src="https://avatars2.githubusercontent.com/u/26819547?s=400&u=ae79d8825ad1127723641cbf32a9a7e2ec221e7f&v=4"
-              class="card-simple-avatar"
-              alt="avatar"
-            />
-            <div class="price-tag">¥<%= reservation.art_class.price %></div>
-            <div>
-              <h2><%= reservation.art_class.title %></h2>
-              <p><%= reservation.art_class.description %></p>
-            </div>
-            <%= link_to "Details", art_class_path(reservation.art_class) %>
-          </div>
+      <div class="card-simple">
+        <%= cl_image_tag reservation.art_class.photo.key, height: 300, width: 700, crop: :fill %>
+        <div class="card-simple-tags">
+          <span class="tag-green"><%= reservation.art_class.category %><%= reservation.status %></span><span class="tag-orange"></span>
         </div>
-
+        <div class="card-simple-text">
+          <div class="price-tag">¥<%= reservation.art_class.price %></div>
+          <div>
+            <h2><%= reservation.art_class.title %></h2>
+            <p><%= reservation.art_class.description %></p>
+          </div>
+          <%= link_to "Details", art_class_path(reservation.art_class) %>
+        </div>
+      </div>
     <% end %>
   </div>
-
   <div class= "cards-small">
     <% current_user.reservations_as_teacher.each do |reservation|%>
-        <div class="card-simple">
-          <img
-            alt="anteloupe canyon"
-            class="card-simple-image"
-            src="https://georgemillerart.com/cdn/shop/products/il_fullxfull.3740138697_n8jr.jpg?v=1674957480&width=1946"
-          />
-          <div class="card-simple-tags">
-            <span class="tag-green"><%= reservation.art_class.category %></span><span class="tag-orange"
+      <div class="card-simple">
+        <%= cl_image_tag reservation.art_class.photo.key, height: 300, width: 400, crop: :fill %>
+        <span class="tag-green"><%= reservation.art_class.category %></span><span class="tag-orange"
             ><%= reservation.status %></span
             >
-          </div>
-
-          <div class="card-simple-text">
-            <img
-              src="https://m.media-amazon.com/images/I/91xBlOwwSwL.jpg"
-              class="card-simple-avatar"
-              alt="avatar"
-            />
-            <div class="price-tag">¥<%= reservation.art_class.price %></div>
-            <div>
-              <h2><%= reservation.art_class.title %></h2>
-              <p><%= reservation.art_class.description %></p>
-            </div>
-            <%= link_to "Details", art_class_path(reservation.art_class) %>
-          </div>
+      </div>
+      <div class="card-simple-text">
+        <div class="price-tag">¥<%= reservation.art_class.price %></div>
+        <div>
+          <h2><%= reservation.art_class.title %></h2>
+          <p><%= reservation.art_class.description %></p>
         </div>
-
-    <% end %>
-  </div>
+        <%= link_to "Details", art_class_path(reservation.art_class) %>
+      </div>
+    </div>
+  <% end %>
+</div>
 </div>
