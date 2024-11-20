@@ -3,6 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
+  text-align: left;
 
   img {
     height: 280px;
@@ -12,9 +13,13 @@
   &:hover h2 a {
     opacity: 0.8;
   }
-  h2 {
+  h3 {
     font-size: 18px;
-    font-weight: bold;
+    margin: 0 0 8px;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: medium;
     margin: 0;
     a {
       color: rgb(72, 72, 72);
@@ -23,24 +28,23 @@
   p {
     font-size: 12px;
     opacity: .7;
-    margin: 0;
   }
 
   .card-home-infos {
-    height: 180px;
+    height: 200px;
     padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: flex-end;
     position: relative;
-  }
-}
 
-.card-home-infos .card-home-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+    .card-home-pricing {
+      position: absolute;
+      right: 16px;
+      bottom: 10px;
+      font-size: 16px;
+    }
+  }
 }
 
 .card-home-link {

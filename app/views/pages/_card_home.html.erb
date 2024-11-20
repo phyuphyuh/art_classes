@@ -6,13 +6,15 @@
   <% end %>
   <div class="card-home-infos">
     <div>
-      <p><%= art_class.category %></p>
+      <h3><%= art_class.category %></h3>
       <h2><%= link_to art_class.title, art_class_path(art_class), class: 'text-decoration-none', title: art_class.title %></h2>
-      <p><%= art_class.dates %></p>
-      <p><%= art_class.location %></p>
+      <div class="d-flex flex-row justify-content-around my-2">
+        <p><%= art_class.dates %></p>
+        <p><%= art_class.location %></p>
+      </div>
       <p><%= art_class.description %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= art_class.price %></h2>
+    <h2 class="card-home-pricing"><%= art_class.price %></h2>
   </div>
   <%= link_to "", art_class_path(art_class), class: 'card-home-link' %>
 </div>
