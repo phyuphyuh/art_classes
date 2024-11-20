@@ -23,10 +23,8 @@
   </div>
 </div>
 <nav class="bottom-navbar">
-  <form class="container-fluid justify-content-end">
-    <%= simple_form_for [@art_class, @reservation] do |f| %>
-      <%= f.submit class: 'submit-btn' %>
-    <% end %>
-    <button class="btn btn-sm btn-outline-secondary" type="button">Contact</button>
-  </form>
+  <%= simple_form_for [@art_class, @reservation] do |f| %>
+    <%= f.submit class: 'submit-btn' %>
+  <% end %>
+  <button class="btn btn-sm btn-outline-secondary" type="button">Contact</button>
 </nav>
