@@ -34,8 +34,14 @@
     </div>
 </div>
 
+
 <nav class="bottom-navbar">
-  <%= simple_form_for [@art_class, @reservation] do |f| %>
-    <%= f.submit class: 'submit-btn' %>
+  <% if current_user != @art_class.user  %>
+    <%= simple_form_for [@art_class, @reservation] do |f| %>
+      <%= f.submit class: 'submit-btn' %>
+    <% end %>
+  <% else %> 
+      <p> You are the teacher! </p>
   <% end %>
 </nav>
+
