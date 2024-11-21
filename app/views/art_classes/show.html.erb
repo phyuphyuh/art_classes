@@ -1,5 +1,5 @@
 <div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFKWjY7ba8/1/0/1600w/canva-pink-abstract-watercolor-zoom-virtual-background-eWdcNlqbr_4.jpg)">
-  <h1><%= @art_class.title %></h1>
+  <%= @art_class.title %>
 </div>
 <div class= "container">
   <div class= "row">
@@ -8,34 +8,40 @@
         <% if @art_class.photo.attached? %>
           <%= cl_image_tag @art_class.photo.key, class: "w-100" %>
         <% else %>
-         <%= image_tag 'art.jpg', class: "w-100" %>
+          <%= image_tag 'art.jpg', class: "w-100" %>
         <% end %>
-       <div class="card-simple-tags">
-         <span class="tag-green"><%= @art_class.category %></span><span class="tag-orange"
-          ><%= @art_class.location %></span>
+        <div class="card-simple-tags">
+          <span class="tag-green"><%= @art_class.category %></span>
         </div>
         <div class="card-simple-text">
           <%= cl_image_tag @art_class.user.photo.key, class: "card-simple-avatar"%>
           <p class="card-user-name"> By: <%= @art_class.user.name %></p>
           <div class="price-tag">¥<%= @art_class.price %></div>
-          <p><%= @art_class.display_dates %></p>
           <div class= "card-description">
-            <h2><%= @art_class.title %></h2>
             <p><%= @art_class.description %></p>
           </div>
         </div>
       </div>
     </div>
     <div class= "col-6">
-      <div style="width: 100%; height: 600px;"
+      <div class= "container">
+        <div style="width: 100%; height: 600px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"</div>
+        </div>
+        <div class= "card-more-info">
+          <h4>Location</h4>
+          <div class="dates-tag"><%= @art_class.location %></div>
+          <h4>Date</h4>
+          <div class="dates-tag"><%= @art_class.dates %></div>
+        </div>
+      </div>
     </div>
+  </div>
+  <nav class="bottom-navbar">
+    <%= simple_form_for [@art_class, @reservation] do |f| %>
+      <%= f.submit class: 'submit-btn' %>
+    <% end %>
+  </nav>
 </div>
-
-<nav class="bottom-navbar">
-  <%= simple_form_for [@art_class, @reservation] do |f| %>
-    <%= f.submit class: 'submit-btn' %>
-  <% end %>
-</nav>
