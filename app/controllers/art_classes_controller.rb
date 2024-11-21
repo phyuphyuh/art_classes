@@ -6,10 +6,10 @@ class ArtClassesController < ApplicationController
     else
       @art_classes = ArtClass.all
     end
-    @markers = @flats.geocoded.map do |flat|
+    @markers = @art_classes.geocoded.map do |art_class|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: art_class.latitude,
+        lng: art_class.longitude
       }
     end
   end
@@ -17,6 +17,10 @@ class ArtClassesController < ApplicationController
   def show
     @art_class = ArtClass.find(params[:id])
     @reservation = Reservation.new
+    @markers = [{
+        lat: @art_class.latitude,
+        lng: @art_class.longitude
+      }]
   end
 
   def new
