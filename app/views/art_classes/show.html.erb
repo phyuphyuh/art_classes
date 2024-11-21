@@ -23,7 +23,11 @@
   </div>
 </div>
 <nav class="bottom-navbar">
-    <%= simple_form_for [@art_class, @reservation] do |f| %>
+    <% if current_user == @art_class.user%>
+      <p> You are the teacher! </p>
+    <% else %>
+      <%= simple_form_for [@art_class, @reservation] do |f| %>
       <%= f.submit class: 'submit-btn' %>
+      <% end %>
     <% end %>
 </nav>
