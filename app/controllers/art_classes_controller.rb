@@ -3,6 +3,8 @@ class ArtClassesController < ApplicationController
   def index
     if params[:category].present?
       @art_classes = ArtClass.where(category: params[:category])
+    elsif params[:query].present?
+      ArtClass.search_by_title_and_description_and_location(params[:query])
     else
       @art_classes = ArtClass.all
     end
