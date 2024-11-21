@@ -1,17 +1,22 @@
 <div class="card-simple">
   <%= cl_image_tag reservation.art_class.photo.key, class: "w-100" %>
   <div class="card-simple-tags">
-    <span class="tag-green"><%= reservation.art_class.category %></span>
+    <span class="tag-green"><%= reservation.art_class.category %></span><span class="tag-orange"
+      ><%= reservation.art_class.location %></span
+    >
+
   </div>
   <div class="card-simple-text">
+    <%= cl_image_tag reservation.art_class.user.photo.key, class: "card-simple-avatar"%>
     <div class="price-tag">¥<%= reservation.art_class.price %></div>
+    <p><%= reservation.art_class.display_dates %></p>
     <div>
       <h2><%= reservation.art_class.title %></h2>
       <p><%= reservation.art_class.description %></p>
     </div>
-    
+
     <div class="d-flex" >
-      <%= link_to "Details", art_class_path(reservation.art_class) %>
+      <%= link_to "Details", art_class_path(reservation.art_class), class: "submit-btn", style: "" %>
       <% if current_user.reservations_as_teacher.include? reservation %>
         <% if reservation.pending? %>
           <%= simple_form_for reservation do |f| %>
