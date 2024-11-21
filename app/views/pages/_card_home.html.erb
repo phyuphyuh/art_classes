@@ -7,12 +7,12 @@
   <div class="card-home-infos">
     <div class="card-home-info">
       <h3><%= art_class.category %></h3>
-      <h2><%= link_to art_class.title, art_class_path(art_class), class: 'text-decoration-none', title: art_class.title %></h2>
-      <div class="d-flex flex-row justify-content-around mt-3">
-        <p><%= art_class.display_dates %></p>
-        <p><%= art_class.location %></p>
-      </div>
-      <p class="card-home-description"><%= art_class.description %></p>
+      <h2><%= link_to art_class.title, art_class_path(art_class), class: 'text-decoration-none', title: art_class.title.capitalize! %></h2>
+      <%# <div class="d-flex flex-row justify-content-around mt-3"> %>
+      <p><%= art_class.display_dates %></p>
+      <p><%= art_class.location %></p>
+      <%# </div> %>
+      <%# <p class="card-home-description"><%= art_class.description %>
     </div>
     <h2 class="card-home-pricing"><%= number_to_currency(art_class.price, { unit: '¥', precision: 0 }) %></h2>
     <%= cl_image_tag art_class.user.photo.key , class: "card-home-user avatar-bordered" %>

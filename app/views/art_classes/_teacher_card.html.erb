@@ -1,11 +1,11 @@
-<div class="card-home">
+<div class="card-teacher">
   <% if art_class.photo.attached? %>
     <%= cl_image_tag art_class.photo.key %>
   <% else %>
     <%= image_tag 'art.jpg' %>
   <% end %>
-  <div class="card-home-infos">
-    <div class="card-home-info">
+  <div class="card-teacher-infos">
+    <div class="card-teacher-info">
       <h3><%= art_class.category %></h3>
       <h2><%= link_to art_class.title, art_class_path(art_class), class: 'text-decoration-none', title: art_class.title %></h2>
       <div class="d-flex flex-row justify-content-around mt-3">
@@ -17,28 +17,29 @@
         <% if art_class.reservations.any? %>
           <% art_class.reservations.each do |reservation| %>
             <li>
-              <div class= "d-flex">
-                <%= reservation.user.name %>
-                <% if reservation.pending? %>
-                  <%= simple_form_for reservation do |f| %>
-                    <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-                    <%= f.submit 'Accept', class: 'btn btn-info' %>
+              <div class= "d-flex justify-content-between align-items-center">
+                <span><%= reservation.user.name %></span>
+                <div class="d-flex">
+                  <% if reservation.pending? %>
+                    <%= simple_form_for reservation do |f| %>
+                      <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                      <%= f.submit 'Accept', class: 'btn btn-info' %>
+                    <% end %>
+                    <%= simple_form_for reservation do |f| %>
+                      <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                      <%= f.submit 'Reject', class: 'btn btn-light' %>
+                    <% end %>
+                  <% else %>
+                    <span class="tag-green"><%= reservation.status %></span>
                   <% end %>
-                  <%= simple_form_for reservation do |f| %>
-                    <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-                    <%= f.submit 'Reject', class: 'btn btn-light' %>
-                  <% end %>
-                <% else %>
-                  <span class="tag-green"><%= reservation.status %></span>
-                <% end %>
+                </div>
               </div>
             </li>
           <% end %>
         <% end %>
       </ul>
     </div>
-    <h2 class="card-home-pricing"><%= number_to_currency(art_class.price, { unit: '¥', precision: 0 }) %></h2>
-    <%= cl_image_tag art_class.user.photo.key , class: "card-home-user avatar-bordered" %>
-    <p class="card-home-user-name"><%= art_class.user.name %></p>
+    <%= cl_image_tag art_class.user.photo.key , class: "card-teacher-user avatar-bordered" %>
+    <p class="card-teacher-user-name"><%= art_class.user.name %></p>
   </div>
 </div>
