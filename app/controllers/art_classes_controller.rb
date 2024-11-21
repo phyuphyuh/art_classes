@@ -6,6 +6,12 @@ class ArtClassesController < ApplicationController
     else
       @art_classes = ArtClass.all
     end
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
