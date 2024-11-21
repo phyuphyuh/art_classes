@@ -9,4 +9,8 @@ class ArtClass < ApplicationRecord
   CATEGORIES = ["Pottery", "Oil Painting", "Watercolor", "Acrylic", "Still Life", "Sketching", "Manga", "Sculpture", "DIY", "Other"]
   validates :category, inclusion: { in: CATEGORIES }
   has_one_attached :photo
+
+  def display_dates
+    dates.split(", ").map { |date_str| Date.parse(date_str).strftime("%b %d, %Y") }.join(", ")
+  end
 end

@@ -6,10 +6,7 @@
     <%= f.input :description %>
     <%= f.input :dates,
             as: :string,
-            input_html: { data: { controller: "datepicker",
-            mode: "multiple",
-            minDate: "today",
-            dateFormat: "Y-m-d" } } %>
+            input_html: { data: { controller: "datepicker" } } %>
     <%= f.input :location %>
     <%= f.input :price %>
     <%= f.input :photo, as: :file %>

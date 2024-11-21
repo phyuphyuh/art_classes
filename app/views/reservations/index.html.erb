@@ -1,24 +1,32 @@
 <div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFKWjY7ba8/1/0/1600w/canva-pink-abstract-watercolor-zoom-virtual-background-eWdcNlqbr_4.jpg)">
-  <h1>My Reservations</h1>
+  <h1>My Classes</h1>
 </div>
 <div class= "container">
   <div class="title2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFBjD0targ/1/0/1600w/canva-green-and-white-watercolor-wallpaper-background--Nv3M-EEvzc.jpg)">
     <h1>Welcome, <%= current_user.name %>!</h1>
   </div>
-
-  <div class= "parent-box">
-    <div>
+  <ul class="nav tabs-underlined" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <span class="nav-link tab-underlined active" id="student-tab" data-bs-toggle="tab" data-bs-target="#student-tab-pane" role="tab" aria-controls="student-tab-pane" aria-selected="true">Attending</span>
+    </li>
+    <li class="nav-item" role="presentation">
+      <span class="nav-link tab-underlined" id="teacher-tab" data-bs-toggle="tab" data-bs-target="#teacher-tab-pane" role="tab" aria-controls="teacher-tab-pane" aria-selected="false">Teaching</span>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade py-3 show active" id="student-tab-pane" role="tabpanel" aria-labelledby="student-tab" tabindex="0">
       <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
-        <h1>Lessons I'm attending</h1>
+        <h1>Classes I'm attending</h1>
       </div>
       <div class= "cards-small">
         <% current_user.reservations.each do |reservation|%>
           <%= render "reservations/card", reservation: reservation %>
         <% end %>
-
       </div>
+    </div>
+    <div class="tab-pane fade py-3" id="teacher-tab-pane" role="tabpanel" aria-labelledby="teacher-tab" tabindex="0">
       <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
-        <h1>Lessons I'm teaching</h1>
+        <h1>Classes I'm teaching</h1>
       </div>
       <div class= "cards-small">
         <% current_user.reservations_as_teacher.each do |reservation|%>
@@ -28,3 +36,23 @@
     </div>
   </div>
 </div>
+<%# <div class= "parent-box">
+    <div>
+      <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
+        <h1>Lessons I'm attending</h1>
+      </div>
+      <div class= "cards-small">
+        <% current_user.reservations.each do |reservation|%>
+  <%# <%= render "reservations/card", reservation: reservation %>
+  <%# <% end %>
+  <%# </div>
+      <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
+        <h1>Lessons I'm teaching</h1>
+      </div>
+      <div class= "cards-small">
+        <% current_user.reservations_as_teacher.each do |reservation|%>
+    <%# <%= render "reservations/card", reservation: reservation %>
+    <%# <% end %>
+    <%# </div> %>
+    <%# </div> %>
+    <%# </div> %>

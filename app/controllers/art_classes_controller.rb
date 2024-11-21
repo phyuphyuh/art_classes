@@ -23,7 +23,6 @@ class ArtClassesController < ApplicationController
     if (@art_class.save)
       redirect_to art_class_path(@art_class)
     else
-      raise
       render 'new', status: :unprocessable_entity
     end
   end
