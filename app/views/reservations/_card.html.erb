@@ -12,6 +12,7 @@
       <p><%= reservation.art_class.description %></p>
       <span class="tag-green"><%= reservation.status %></span>
     </div>
+
     <div class="d-flex" >
       <%= link_to "Details", art_class_path(reservation.art_class), class: "submit-btn", style: "" %>
       <% if current_user.reservations_as_teacher.include? reservation %>
