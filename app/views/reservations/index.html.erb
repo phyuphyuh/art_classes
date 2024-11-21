@@ -29,30 +29,10 @@
         <h1>Classes I'm teaching</h1>
       </div>
       <div class= "cards-small">
-        <% current_user.reservations_as_teacher.each do |reservation|%>
-          <%= render "reservations/card", reservation: reservation %>
+        <% current_user.art_classes.each do |art_class|%>
+          <%= render "art_classes/teacher_card", art_class: art_class %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
-<%# <div class= "parent-box">
-    <div>
-      <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
-        <h1>Lessons I'm attending</h1>
-      </div>
-      <div class= "cards-small">
-        <% current_user.reservations.each do |reservation|%>
-  <%# <%= render "reservations/card", reservation: reservation %>
-  <%# <% end %>
-  <%# </div>
-      <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
-        <h1>Lessons I'm teaching</h1>
-      </div>
-      <div class= "cards-small">
-        <% current_user.reservations_as_teacher.each do |reservation|%>
-    <%# <%= render "reservations/card", reservation: reservation %>
-    <%# <% end %>
-    <%# </div> %>
-    <%# </div> %>
-    <%# </div> %>

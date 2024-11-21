@@ -12,6 +12,13 @@ class ArtClass < ApplicationRecord
   validates :category, inclusion: { in: CATEGORIES }
   has_one_attached :photo
 
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_description_and_location,
+  against: [ :title, :description, :location ],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
+
   def display_dates
     dates.split(", ").map { |date_str| Date.parse(date_str).strftime("%b %d, %Y") }.join(", ")
   end
