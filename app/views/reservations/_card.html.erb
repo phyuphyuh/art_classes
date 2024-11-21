@@ -1,7 +1,7 @@
 <div class="card-simple">
   <%= cl_image_tag reservation.art_class.photo.key, class: "w-100" %>
   <div class="card-simple-tags">
-    <span class="tag-green"><%= reservation.art_class.category %><%= reservation.status %></span>
+    <span class="tag-green"><%= reservation.art_class.category %></span>
   </div>
   <div class="card-simple-text">
     <div class="price-tag">¥<%= reservation.art_class.price %></div>
@@ -9,6 +9,26 @@
       <h2><%= reservation.art_class.title %></h2>
       <p><%= reservation.art_class.description %></p>
     </div>
-    <%= link_to "Details", art_class_path(reservation.art_class) %>
+    
+    <div class="d-flex" >
+      <%= link_to "Details", art_class_path(reservation.art_class) %>
+      <% if current_user.reservations_as_teacher.include? reservation %>
+        <% if reservation.pending? %>
+          <%= simple_form_for reservation do |f| %>
+          <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+          <%= f.submit 'Accept', class: 'btn btn-info' %>
+          <% end %>
+
+          <%= simple_form_for reservation do |f| %>
+          <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+          <%= f.submit 'Reject', class: 'btn btn-light' %>
+          <% end %>
+        <% else %>
+          <span class="tag-green"><%= reservation.status %></span>
+        <% end %>
+      <% else %>
+          <span class="tag-green"><%= reservation.status %></span>
+      <% end %>
+   </div>
   </div>
 </div>
