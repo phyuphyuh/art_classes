@@ -1,45 +1,47 @@
-<div class="card-teacher">
+<div class="card-simple">
   <% if art_class.photo.attached? %>
-    <%= cl_image_tag art_class.photo.key %>
+    <%= cl_image_tag art_class.photo.key, width: 560, height: 360, crop: :fill %>
   <% else %>
-    <%= image_tag 'art.jpg' %>
+    <%= image_tag 'art.jpg', class: "w-100" %>
   <% end %>
-  <div class="card-teacher-infos">
-    <div class="card-teacher-info">
-      <h3><%= art_class.category %></h3>
-      <h2><%= link_to art_class.title, art_class_path(art_class), class: 'text-decoration-none', title: art_class.title %></h2>
-      <div class="d-flex flex-row justify-content-around mt-3">
-        <p><%= art_class.display_dates %></p>
-        <p><%= art_class.location %></p>
-      </div>
-      <ul>
-        <%# <% if current_user.reservations_as_teacher.include? reservation %>
-        <% if art_class.reservations.any? %>
-          <% art_class.reservations.each do |reservation| %>
-            <li>
-              <div class= "d-flex justify-content-between align-items-center">
-                <span><%= reservation.user.name %></span>
-                <div class="d-flex">
-                  <% if reservation.pending? %>
-                    <%= simple_form_for reservation do |f| %>
-                      <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-                      <%= f.submit 'Accept', class: 'btn btn-info' %>
-                    <% end %>
-                    <%= simple_form_for reservation do |f| %>
-                      <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-                      <%= f.submit 'Reject', class: 'btn btn-light' %>
-                    <% end %>
-                  <% else %>
-                    <span class="tag-green"><%= reservation.status %></span>
-                  <% end %>
-                </div>
-              </div>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
+  <div class="card-simple-tags">
+    <span class="tag-green"><%= art_class.category %></span><span class="tag-orange"><%= art_class.location %></span>
+  </div>
+  <div class="card-simple-text">
+    <%= cl_image_tag art_class.user.photo.key, class: "card-simple-avatar"%>
+    <p><i class="fa-regular fa-calendar-days"></i> <%= art_class.display_dates %> / <i class="fa-solid fa-location-dot"></i> <%= art_class.location %></p>
+    <div>
+      <h2><%= art_class.title.capitalize! %></h2>
     </div>
-    <%= cl_image_tag art_class.user.photo.key , class: "card-teacher-user avatar-bordered" %>
-    <p class="card-teacher-user-name"><%= art_class.user.name %></p>
+    <ul class= "list-group">
+      <div class="d-flex justify-content-between">
+        <p class="fw-bold">Student Name</p>
+        <p class="fw-bold">Status</p>
+      </div>
+      <%# <% if current_user.reservations_as_teacher.include? reservation %>
+      <% if art_class.reservations.any? %>
+        <% art_class.reservations.each do |reservation| %>
+          <li class= "list-group-item">
+            <div class= "d-flex justify-content-between align-items-center">
+              <span><%= reservation.user.name %></span>
+              <div class="d-flex">
+                <% if reservation.pending? %>
+                  <%= simple_form_for reservation do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                    <%= f.submit 'Accept', class: 'btn btn-info' %>
+                  <% end %>
+                  <%= simple_form_for reservation do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                    <%= f.submit 'Reject', class: 'btn btn-light' %>
+                  <% end %>
+                <% else %>
+                  <span class="tag-green"><%= reservation.status %></span>
+                <% end %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 </div>

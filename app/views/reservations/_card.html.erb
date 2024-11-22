@@ -12,7 +12,12 @@
       <p><%= reservation.art_class.description %></p>
       <span class="tag-green"><%= reservation.status %></span>
     </div>
+<<<<<<< HEAD
     <div>
+=======
+
+    <div class="d-flex" >
+>>>>>>> 764af6685a83d678cda392a6b380735e65e86c5d
       <%= link_to "Details", art_class_path(reservation.art_class), class: "submit-btn", style: "" %>
         <% if current_user.reservations_as_teacher.include? reservation %>
           <% if reservation.pending? %>
