@@ -1,7 +1,7 @@
 <%= render "banner" %>
 <%= render "category_link" %>
 <div class="container text-center my-4">
-  <h2>Upcoming Classes</h2>
+  <h2 class="my-4">Upcoming Classes</h2>
   <div class="cards mt-2 mb-5">
     <% @art_classes_samples.each do |art_class| %>
       <%= render "card_home", art_class: art_class %>
