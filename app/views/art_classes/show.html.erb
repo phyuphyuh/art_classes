@@ -25,7 +25,7 @@
                 <%= f.submit class: 'submit-btn' %>
               <% end %>
             <% else %>
-              <p> You are the teacher! </p>
+              <%= link_to "You are the teacher of this class! See your other classes.", reservations_path %>  
             <% end %>
           </nav>
         </div>
