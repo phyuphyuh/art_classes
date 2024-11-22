@@ -12,27 +12,22 @@
       <p><%= reservation.art_class.description %></p>
       <span class="tag-green"><%= reservation.status %></span>
     </div>
-<<<<<<< HEAD
-    <div>
-=======
-
     <div class="d-flex" >
->>>>>>> 764af6685a83d678cda392a6b380735e65e86c5d
       <%= link_to "Details", art_class_path(reservation.art_class), class: "submit-btn", style: "" %>
-        <% if current_user.reservations_as_teacher.include? reservation %>
-          <% if reservation.pending? %>
-            <%= simple_form_for reservation do |f| %>
-              <%= f.input :status, as: :hidden, input_html: { value: 'Accepted'} %>
-              <%= f.submit 'Accept', class: 'btn btn-info' %>
-            <% end %>
-            <%= simple_form_for reservation do |f| %>
-              <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
-              <%= f.submit 'Reject', class: 'btn btn-light' %>
-            <% end %>
-          <% else %>
-            <span class="tag-green"><%= reservation.status %></span>
+      <% if current_user.reservations_as_teacher.include? reservation %>
+        <% if reservation.pending? %>
+          <%= simple_form_for reservation do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Accepted'} %>
+            <%= f.submit 'Accept', class: 'btn btn-info' %>
           <% end %>
+          <%= simple_form_for reservation do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
+            <%= f.submit 'Reject', class: 'btn btn-light' %>
+          <% end %>
+        <% else %>
+          <span class="tag-green"><%= reservation.status %></span>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>
