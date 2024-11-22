@@ -8,7 +8,6 @@
   margin-left: 2%;
   margin-bottom: 4%;
   background-color: rgb(203, 203, 203);
-
 }
 
 .img-fluid {
@@ -62,4 +61,38 @@
 
 .submit-btn:active {
   opacity: .5;
+}
+
+.card-more-info {
+  padding: 4%;
+  text-align: justify;
+}
+
+.map{
+  margin-bottom: 4%;
+  border-radius: 4%;
+}
+
+.location-div{
+  background-color: #C19A4D;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+.dates-div{
+  background-color: #C19A4D;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+.teacher-div{
+  background-color: #C19A4D;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 2%;
+  margin-bottom: 2%;
 }

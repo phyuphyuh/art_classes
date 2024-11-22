@@ -15,7 +15,6 @@
         </div>
         <div class="card-simple-text">
           <%= cl_image_tag @art_class.user.photo.key, class: "card-simple-avatar"%>
-          <p class="card-user-name"> By: <%= @art_class.user.name %></p>
           <div class="price-tag">¥<%= @art_class.price %></div>
           <div class= "card-description">
             <p><%= @art_class.description %></p>
@@ -25,19 +24,39 @@
     </div>
     <div class= "col-6">
       <div class= "container">
-        <div style="width: 100%; height: 600px;"
+        <div style="width: 100%; height: 600px;" class= "map"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"</div>
         </div>
         <div class= "card-more-info">
-          <h4>Location</h4>
-          <div class="dates-tag"><%= @art_class.location %></div>
-          <h4>Date</h4>
-          <div class="dates-tag"><%= @art_class.dates %></div>
+          <div class= "location-div">
+            <h5>Location</h5>
+            <div class="dates-tag"><%= @art_class.location %></div>
+          </div>
+          <div class= "dates-div">
+            <h5>Date</h5>
+            <div class="dates-tag"><%= @art_class.dates %></div>
+          </div>
+          <div class= "teacher-div">
+            <h5>Teacher:</h5>
+            <p> <%= @art_class.user.name %></p>
+            <div>
+              <h5>About the teacher:</h5>
+              <p>
+                <%= @art_class.user.name %> is a seasoned artisan with a passion for creativity and a lifetime of experience in teaching the art of handcrafts. Whether it's pottery, woodworking, knitting, or jewelry making, <%= @art_class.user.name %> has mastered a wide range of skills and enjoys sharing their knowledge with others. Their workshops are known for their relaxed, inspiring atmosphere, where students of all levels feel encouraged to explore their artistic potential. Beyond teaching, <%= @art_class.user.name %> finds joy in experimenting with new techniques, blending traditional craftsmanship with modern design. Their dedication to their craft and ability to connect with people make them a cherished mentor and a true artist at heart.</p>
+            </div>
+          </div>
         </div>
       </div>
+      <nav class="bottom-navbar">
+        <%= simple_form_for [@art_class, @reservation] do |f| %>
+          <%= f.submit class: 'submit-btn' %>
+        <% end %>
+      </nav>
     </div>
+<<<<<<< HEAD
+=======
   </div>
   <nav class="bottom-navbar">
     <%= simple_form_for [@art_class, @reservation] do |f| %>
@@ -57,3 +76,4 @@
 </nav>
 
 
+>>>>>>> 764af6685a83d678cda392a6b380735e65e86c5d
