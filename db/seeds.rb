@@ -99,7 +99,7 @@ manga2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 manga2.save
 
 manga3 = ArtClass.create!(title: "Storyboarding for Manga", description: "Develop the skills to create compelling manga storyboards. This class covers panel layouts, pacing, and visual storytelling techniques to craft engaging narratives.", price: 4800, category: "Manga", location: "日本, 〒153-0063 東京都大田区 大田#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/01/13", user: frederick)
-file = URI.parse("https://i.pinimg.com/736x/06/1d/85/061d85f6156df150853850794b09d75d.jpg").open
+file = URI.parse("https://www.pelago.com/img/products/JP-Japan/3-hour-manga-drawing-workshop-in-tokyo/b86d52a2-0992-485f-ab02-be76dedbf074_3-hour-manga-drawing-workshop-in-tokyo-xlarge.webp").open
 manga3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 manga3.save
 
@@ -189,7 +189,7 @@ file = URI.parse("https://artacademyusa.com/wp-content/uploads/2017/09/oil-paint
 oil_painting5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 oil_painting5.save
 
-acrylic = ArtClass.create!(title: " Acrylic Basics: Mastering Brush Strokes", description: "Perfect for beginners, this workshop teaches foundational techniques such as blending, layering, and brush control. Participants will create a simple yet beautiful landscape painting to take home.", price: 4000, category: "Acrylic", location: "日本, 〒153-0063 東京都港区 港#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/02/18", user: sakura)
+acrylic = ArtClass.create!(title: "Acrylic Basics: Mastering Brush Strokes", description: "Perfect for beginners, this workshop teaches foundational techniques such as blending, layering, and brush control. Participants will create a simple yet beautiful landscape painting to take home.", price: 4000, category: "Acrylic", location: "日本, 〒153-0063 東京都港区 港#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/02/18", user: sakura)
 file = URI.parse("https://i.ytimg.com/vi/ODG8Rvjjp-o/maxresdefault.jpg").open
 acrylic.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 acrylic.save
