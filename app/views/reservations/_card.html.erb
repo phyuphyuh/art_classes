@@ -25,7 +25,7 @@
             <%= f.submit 'Reject', class: 'btn btn-light' %>
           <% end %>
         <% else %>
-          <span class="tag-green"><%= reservation.status %></span>
+          <span class="tag-<%= reservation.status %>"><%= reservation.status %></span>
         <% end %>
       <% end %>
     </div>
