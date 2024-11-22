@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reservations, dependent: :destroy
   has_many :art_classes
+  has_many :reviews
   has_many :reservations_as_teacher, through: :art_classes, source: :reservations
   has_one_attached :photo
 end

@@ -12,7 +12,8 @@
       <p><%= reservation.art_class.description %></p>
       <span class="tag-green"><%= reservation.status %></span>
     </div>
-    <div class="d-flex" >
+
+    <div>
       <%= link_to "Details", art_class_path(reservation.art_class), class: "submit-btn", style: "" %>
       <% if current_user.reservations_as_teacher.include? reservation %>
         <% if reservation.pending? %>
@@ -25,7 +26,7 @@
             <%= f.submit 'Reject', class: 'btn btn-light' %>
           <% end %>
         <% else %>
-          <span class="tag-<%= reservation.status %>"><%= reservation.status %></span>
+          <span class="tag-green"><%= reservation.status %></span>
         <% end %>
       <% end %>
     </div>

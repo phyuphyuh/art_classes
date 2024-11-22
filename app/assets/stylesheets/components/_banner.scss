@@ -6,17 +6,16 @@
 
   h1 {
     color: whitesmoke;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 15px rgba(0,0,0,0.2);
     font-size: 40px;
     font-weight: 500;
   }
   p {
     font-size: 20px;
     color: lightblue;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 15px rgba(0,0,0,0.2);
   }
 }
-
 
 .cat {
   align-items: center;
@@ -31,11 +30,11 @@
     margin: 0 24px;
     padding-top: 10px;
     a {
-      color: gray;
+      color: #705C53;
       text-decoration: none;
     }
     &:hover a {
-      color: rgb(56, 56, 56);
+      color: #A6B37D;
     }
   }
 }
