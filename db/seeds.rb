@@ -23,7 +23,7 @@ claudia = User.create!(name: "Claudia Ordonez", email: "claudiaOrdonez@gmail.com
 
 #attach photos to users
 users = User.all
-gender = 'male'
+gender = 'all'
 age = 'all'
 ethnicity = 'all'
 url = "https://this-person-does-not-exist.com/new?gender=#{gender}&age=#{age}&etnic=#{ethnicity}"
@@ -164,6 +164,56 @@ file = URI.parse("https://thecfa.art/wp-content/uploads/2020/06/edit1-26-of-37-s
 sculpture5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 sculpture5.save
 
+oil_painting = ArtClass.create!(title: "Beginner’s Guide to Oil Painting", description: "Dive into the fundamentals of oil painting in this hands-on class for beginners. Learn about tools, materials, and techniques, including color mixing, brushwork, and creating textures. By the end of the class, you’ll have your first complete painting to take home!", price: 4000, category: "Oil Painting", location: "日本, 〒153-0063 東京都目黒区 目黒#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/01/11", user: paula)
+file = URI.parse("https://www.columbiamuseum.org/sites/default/files/styles/open_crop/public/2020-11/Art%20Class%20Stock%20%285%20of%2037%29.jpg?h=dc7c5570&itok=NacQN7zx").open
+oil_painting.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+oil_painting.save
+
+oil_painting2 = ArtClass.create!(title: "Exploring Light and Shadow in Oil Painting", description: "Master the art of chiaroscuro by understanding light and shadow. This intermediate class will teach you how to create depth and dimension, focusing on still life and landscape compositions. Perfect for painters looking to elevate their realism.", price: 5500, category: "Oil Painting", location: "日本, 〒153-0063 東京都中央区 中央#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/01/12", user: paula)
+file = URI.parse("https://planetfulloflove.com/wp-content/uploads/2017/03/P1310047-1024x768.jpg").open
+oil_painting2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+oil_painting2.save
+
+oil_painting3 = ArtClass.create!(title: "Portraits in Oil: Capturing Expressions", description: "Learn to bring life to your portraits with this specialized class. Study proportions, skin tones, and expressive features to create a stunning oil portrait. This course is ideal for artists with some painting experience.", price: 6800, category: "Oil Painting", location: "日本, 〒153-0063 東京都大田区 大田#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/01/13", user: paula)
+file = URI.parse("https://d26jxt5097u8sr.cloudfront.net/s3fs-public/2021-09/Flow-State-header.jpg").open
+oil_painting3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+oil_painting3.save
+
+oil_painting4 = ArtClass.create!(title: "Advanced Oil Techniques: From Imagination to Canvas", description: "Take your oil painting to the next level by exploring advanced techniques like glazing, scumbling, and impasto. This workshop focuses on conceptualizing and executing creative ideas, helping you develop a signature style.", price: 4500, category: "Oil Painting", location: "日本, 〒153-0063 東京都品川区 品川#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/01/14", user: paula)
+file = URI.parse("https://images.squarespace-cdn.com/content/v1/60b6b35d5ced1907cb21a500/1626295338761-LFRDE09CPGFC8UHWG827/c-MarjorieTaylor__M.Taylor_painting_1611199133012.jpg?format=1500w").open
+oil_painting4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+oil_painting4.save
+
+oil_painting5 = ArtClass.create!(title: "Plein Air Oil Painting: Landscapes in Nature", description: "Immerse yourself in the beauty of the outdoors with this plein air class. Learn to capture natural light, colors, and scenery using oil paints. Suitable for all levels, this class offers guidance on painting in varying weather conditions.", price: 7000, category: "Oil Painting", location: "日本, 〒153-0063 東京都江東区 江東#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/01/15", user: paula)
+file = URI.parse("https://artacademyusa.com/wp-content/uploads/2017/09/oil-painting-classes-NYC-1024x768.jpg").open
+oil_painting5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+oil_painting5.save
+
+acrylic = ArtClass.create!(title: " Acrylic Basics: Mastering Brush Strokes", description: "Perfect for beginners, this workshop teaches foundational techniques such as blending, layering, and brush control. Participants will create a simple yet beautiful landscape painting to take home.", price: 4000, category: "Acrylic", location: "日本, 〒153-0063 東京都港区 港#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/02/18", user: sakura)
+file = URI.parse("https://i.ytimg.com/vi/ODG8Rvjjp-o/maxresdefault.jpg").open
+acrylic.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+acrylic.save
+
+acrylic2 = ArtClass.create!(title: "Color Explosion: Abstract Acrylic Art", description: "Dive into the vibrant world of abstract painting! Experiment with bold colors, textures, and shapes to create a unique masterpiece. No rules, just creativity!", price: 4000, category: "Acrylic", location: "日本, 〒153-0063 東京都港区 港#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/02/18", user: sakura)
+file = URI.parse("https://www.divineandwild.com/cdn/shop/products/2nosPYfw.jpg?v=1637600827").open
+acrylic2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+acrylic2.save
+
+acrylic3 = ArtClass.create!(title: "Portraits in Acrylic: Capturing Expressions", description: "This intermediate-level workshop focuses on painting realistic or stylized portraits. Learn to mix skin tones, paint facial features, and bring personality to your canvas.", price: 4000, category: "Acrylic", location: "日本, 〒153-0063 東京都港区 港#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/02/18", user: sakura)
+file = URI.parse("https://theweekendworkshop.com.my/wp-content/uploads/2023/04/Acrylic-painting.jpg").open
+acrylic3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+acrylic3.save
+
+acrylic4 = ArtClass.create!(title: "Acrylic and Texture: Mixed Media Magic", description: "Explore acrylic painting combined with mixed media techniques such as palette knife work, stenciling, and using unconventional tools. Create a textured, three-dimensional artwork.", price: 4000, category: "Acrylic", location: "日本, 〒153-0063 東京都港区 港#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/02/18", user: sakura)
+file = URI.parse("https://www.room212.co.uk/wp-content/uploads/2022/07/painting-class-july-22-scaled.jpg").open
+acrylic4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+acrylic4.save
+
+acrylic5 = ArtClass.create!(title: "Nightscapes in Acrylic: Painting the Stars", description: "Capture the beauty of the night sky with acrylic paints! This workshop guides you in creating atmospheric night scenes, complete with stars, moonlight, and glowing effects.", price: 4000, category: "Acrylic", location: "日本, 〒153-0063 東京都港区 港#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/02/18", user: sakura)
+file = URI.parse("https://subcultours.com/cdn/shop/files/Painting-Workshop-Experiences-in-Acrylic-Painting-with-Carolina-in-Porto-Portugal-by-subcultours-6.jpg?v=1711231042&width=1946").open
+acrylic5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+acrylic5.save
+
 
 Reservation.create!(art_class: ArtClass.where.not(user: claudia).shuffle.first, user: claudia, status: "pending")
 Reservation.create!(art_class: ArtClass.where.not(user: frederick).shuffle.first, user: frederick, status: "pending")
@@ -182,11 +232,11 @@ Reservation.create!(art_class: ArtClass.where.not(user: claudia).shuffle.first, 
 Reservation.create!(art_class: ArtClass.where.not(user: claudia).shuffle.first, user: claudia, status: "pending")
 Reservation.create!(art_class: ArtClass.where.not(user: claudia).shuffle.first, user: claudia, status: "pending")
 
-Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
-Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
-Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
-Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
-Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
-Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
-Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
-Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
+Review.create!(user: User.all.sample, art_class: ArtClass.all.sample, comment: "Amazing teacher. Love their classes!", rating: 2)
+Review.create!(user: User.all.sample, art_class: ArtClass.all.sample, comment: "Amazing teacher. Love their classes!", rating: 5)
+Review.create!(user: User.all.sample, art_class: ArtClass.all.sample, comment: "Amazing teacher. Love their classes!", rating: 2)
+Review.create!(user: User.all.sample, art_class: ArtClass.all.sample, comment: "Amazing teacher. Love their classes!", rating: 1)
+Review.create!(user: User.all.sample, art_class: ArtClass.all.sample, comment: "Amazing teacher. Love their classes!", rating: 4)
+Review.create!(user: User.all.sample, art_class: ArtClass.all.sample, comment: "Amazing teacher. Love their classes!", rating: 4)
+Review.create!(user: User.all.sample, art_class: ArtClass.all.sample, comment: "Amazing teacher. Love their classes!", rating: 3)
+Review.create!(user: User.all.sample, art_class: ArtClass.all.sample, comment: "Amazing teacher. Love their classes!", rating: 4)
