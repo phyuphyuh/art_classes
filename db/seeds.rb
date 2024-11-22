@@ -181,3 +181,12 @@ Reservation.create!(art_class: ArtClass.where.not(user: claudia).shuffle.first, 
 Reservation.create!(art_class: ArtClass.where.not(user: claudia).shuffle.first, user: claudia, status: "pending")
 Reservation.create!(art_class: ArtClass.where.not(user: claudia).shuffle.first, user: claudia, status: "pending")
 Reservation.create!(art_class: ArtClass.where.not(user: claudia).shuffle.first, user: claudia, status: "pending")
+
+Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
+Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
+Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
+Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
+Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
+Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
+Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)
+Review.create!(user: User.find(391), art_class: ArtClass.find(435), comment: "Amazing!", rating: 2)

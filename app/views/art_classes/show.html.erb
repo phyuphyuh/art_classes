@@ -1,7 +1,7 @@
 <div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://marketplace.canva.com/EAFKWjY7ba8/1/0/1600w/canva-pink-abstract-watercolor-zoom-virtual-background-eWdcNlqbr_4.jpg)">
   <%= @art_class.title %>
 </div>
-<div class= "container">
+<div class= "container mt-5">
   <div class= "row">
     <div class= "col-6">
       <div class="card-simple">
@@ -20,16 +20,23 @@
             <p><%= @art_class.description %></p>
           </div>
         </div>
-      </div>
-      <nav class="bottom-navbar">
-        <% if current_user != @art_class.user  %>
-          <%= simple_form_for [@art_class, @reservation] do |f| %>
-            <%= f.submit class: 'submit-btn' %>
+        <nav class="bottom-navbar">
+          <% if current_user != @art_class.user  %>
+            <%= simple_form_for [@art_class, @reservation] do |f| %>
+              <%= f.submit class: 'submit-btn' %>
+            <% end %>
+          <% else %>
+            <p> You are the teacher! </p>
           <% end %>
-        <% else %>
-          <p> You are the teacher! </p>
-        <% end %>
-      </nav>
+        </nav>
+      </div>
+      <div class="card-product">
+        <img src= "">
+        <div class="card-product-infos">
+          <h2>Product name</h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
     </div>
     <div class= "col-6">
       <div class= "container">
