@@ -25,7 +25,7 @@
                 <%= f.submit class: 'submit-btn' %>
               <% end %>
             <% else %>
-              <%= link_to "You are the teacher of this class! See your other classes.", reservations_path %>
+              <%= link_to "You are the teacher of this class! See your other classes.", reservations_path(tab: "Teaching") %>
             <% end %>
           </nav>
         </div>
