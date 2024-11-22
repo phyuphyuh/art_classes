@@ -19,6 +19,15 @@
           <div class= "card-description">
             <p><%= @art_class.description %></p>
           </div>
+          <nav class="bottom-navbar">
+            <% if current_user != @art_class.user  %>
+              <%= simple_form_for [@art_class, @reservation] do |f| %>
+                <%= f.submit class: 'submit-btn' %>
+              <% end %>
+            <% else %>
+              <p> You are the teacher! </p>
+            <% end %>
+          </nav>
         </div>
       </div>
     </div>
@@ -49,31 +58,4 @@
           </div>
         </div>
       </div>
-      <nav class="bottom-navbar">
-        <%= simple_form_for [@art_class, @reservation] do |f| %>
-          <%= f.submit class: 'submit-btn' %>
-        <% end %>
-      </nav>
     </div>
-<<<<<<< HEAD
-=======
-  </div>
-  <nav class="bottom-navbar">
-    <%= simple_form_for [@art_class, @reservation] do |f| %>
-      <%= f.submit class: 'submit-btn' %>
-    <% end %>
-  </nav>
-</div>
-
-<nav class="bottom-navbar">
-  <% if current_user != @art_class.user  %>
-    <%= simple_form_for [@art_class, @reservation] do |f| %>
-      <%= f.submit class: 'submit-btn' %>
-    <% end %>
-  <% else %> 
-      <p> You are the teacher! </p>
-  <% end %>
-</nav>
-
-
->>>>>>> 764af6685a83d678cda392a6b380735e65e86c5d
