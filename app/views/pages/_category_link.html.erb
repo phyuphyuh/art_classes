@@ -4,17 +4,17 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse container" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto cat">
+      <ul class="navbar-nav me-auto cat nav-tabs">
         <%# <li class="navbar-brand">
           <p>Categories</p>
         </li> %>
-        <li class="nav-item cat-link">
+        <li class="nav-item cat-link active" data-toggle="tab">
           <%= link_to art_classes_path(category: 'Pottery'), class: 'text-decoration-none' do %>
             <i class="fa-solid fa-mug-saucer"></i>
             <p>Pottery</p>
           <% end %>
         </li>
-        <li class="nav-item cat-link">
+        <li class="nav-item cat-link" data-toggle="tab">
           <%= link_to art_classes_path(category: 'Oil Painting'), class: 'text-decoration-none' do %>
             <i class="fa-solid fa-paintbrush"></i>
             <p>Oil Painting</p>
