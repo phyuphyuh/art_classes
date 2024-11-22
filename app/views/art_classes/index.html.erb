@@ -4,7 +4,7 @@
 <%= render "pages/category_link" %>
 <div class="container my-4">
   <div class="cards mt-2 mb-5">
-    <% @art_classes.each do |art_class|  %>
+    <% @art_classes.sorted_by_earliest_date.each do |art_class|  %>
       <%= render "pages/card_home", art_class: art_class %>
     <% end %>
   </div>

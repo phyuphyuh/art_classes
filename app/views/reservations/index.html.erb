@@ -30,10 +30,51 @@
       <div class="title3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ethanallen.ca/on/demandware.static/-/Sites-main/default/dw7bfd0395/images/large_gray/WQ1112A.jpg)">
         Classes I'm teaching
       </div>
-      <div class= "cards-small">
-        <% current_user.art_classes.each do |art_class|%>
-          <%= render "art_classes/teacher_card", art_class: art_class %>
-        <% end %>
+      <ul class="nav tabs-underlined" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <span class="nav-link tab-underlined active" id="requests-tab" data-bs-toggle="tab" data-bs-target="#requests-tab-pane" role="tab" aria-controls="requests-tab-pane" aria-selected="true">Requests</span>
+        </li>
+        <li class="nav-item" role="presentation">
+          <span class="nav-link tab-underlined" id="upcoming-tab" data-bs-toggle="tab" data-bs-target="#upcoming-tab-pane" role="tab" aria-controls="upcoming-tab-pane" aria-selected="false">Upcoming</span>
+        </li>
+        <li class="nav-item" role="presentation">
+          <span class="nav-link tab-underlined" id="past-tab" data-bs-toggle="tab" data-bs-target="#past-tab-pane" role="tab" aria-controls="past-tab-pane" aria-selected="false">Past</span>
+        </li>
+        <li class="nav-item" role="presentation">
+          <span class="nav-link tab-underlined" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-tab-pane" role="tab" aria-controls="all-tab-pane" aria-selected="false">All</span>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade py-3 show active" id="requests-tab-pane" role="tabpanel" aria-labelledby="requests-tab" tabindex="0">
+          <div class= "cards-small">
+            <% current_user.art_classes.with_pending_reservations.sorted_by_earliest_date.each do |art_class|%>
+              <%= render "art_classes/teacher_card", art_class: art_class %>
+            <% end %>
+          </div>
+        </div>
+        <div class="tab-pane fade py-3" id="upcoming-tab-pane" role="tabpanel" aria-labelledby="upcoming-tab" tabindex="0">
+          <div class= "cards-small">
+            <% current_user.art_classes.with_accepted_reservations.sorted_by_earliest_date.each do |art_class|%>
+              <%= render "art_classes/teacher_card", art_class: art_class %>
+            <% end %>
+          </div>
+        </div>
+        <div class="tab-pane fade py-3" id="past-tab-pane" role="tabpanel" aria-labelledby="past-tab" tabindex="0">
+          <div class= "cards-small">
+            <% current_user.art_classes.each do |art_class|%>
+              <% if art_class.old? %>
+                <%= render "art_classes/teacher_card", art_class: art_class %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="tab-pane fade py-3" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
+          <div class= "cards-small">
+            <% current_user.art_classes.each do |art_class|%>
+              <%= render "art_classes/teacher_card", art_class: art_class %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
