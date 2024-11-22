@@ -8,8 +8,7 @@
     <span class="tag-green"><%= art_class.category %></span><span class="tag-orange"><%= art_class.location %></span>
   </div>
   <div class="card-simple-text">
-    <%= cl_image_tag art_class.user.photo.key, class: "card-simple-avatar"%>
-    <p><i class="fa-regular fa-calendar-days"></i> <%= art_class.display_dates %> / <i class="fa-solid fa-location-dot"></i> <%= art_class.location %></p>
+    <p><i class="fa-regular fa-calendar-days"></i> <%= art_class.display_dates %></p>
     <div>
       <h2><%= art_class.title.capitalize! %></h2>
     </div>

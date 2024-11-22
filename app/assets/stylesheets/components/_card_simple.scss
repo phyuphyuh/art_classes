@@ -40,6 +40,19 @@
   color: #582d0d;
 }
 
+.card-simple-tags .tag-pending {
+  background-color: #d6912a;
+}
+
+.card-simple-tags .tag-accepted {
+  background-color:#407765
+}
+
+.card-simple-tags .tag-rejected {
+  background-color:#f32525
+}
+
+
 .card-simple-text {
   /*fixed*/
   position: relative;

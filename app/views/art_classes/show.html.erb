@@ -19,6 +19,15 @@
           <div class= "card-description">
             <p><%= @art_class.description %></p>
           </div>
+          <nav class="bottom-navbar">
+            <% if current_user != @art_class.user  %>
+              <%= simple_form_for [@art_class, @reservation] do |f| %>
+                <%= f.submit class: 'submit-btn' %>
+              <% end %>
+            <% else %>
+              <%= link_to "You are the teacher of this class! See your other classes.", reservations_path %>  
+            <% end %>
+          </nav>
         </div>
         <nav class="bottom-navbar">
           <% if current_user != @art_class.user  %>

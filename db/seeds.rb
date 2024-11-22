@@ -104,10 +104,10 @@ manga3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 manga3.save
 
 #Seeds for art classes
-manga4 = ArtClass.create!(title: "Inking and Tonal Techniques", description: "Master inking techniques and learn to use screen tones to add depth and emotion to your manga artwork. Suitable for intermediate and advanced artists.", price: 6000, category: "Manga", location: "日本, 〒153-0063 東京都新宿区 新宿#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/02/21", user: sakura)
-file = URI.parse("https://www.visitvictoria.com/-/media/atdw/melbourne/whats-on/classes-and-workshops/d9ba15a53da7b10e6e8ab47bd5146aa1_1600x1200.jpeg?ts=20241024320642").open
-manga4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-manga4.save
+# manga4 = ArtClass.create!(title: "Inking and Tonal Techniques", description: "Master inking techniques and learn to use screen tones to add depth and emotion to your manga artwork. Suitable for intermediate and advanced artists.", price: 6000, category: "Manga", location: "日本, 〒153-0063 東京都新宿区 新宿#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/02/21", user: sakura)
+# file = URI.parse("https://www.visitvictoria.com/-/media/atdw/melbourne/whats-on/classes-and-workshops/d9ba15a53da7b10e6e8ab47bd5146aa1_1600x1200.jpeg?ts=20241024320642").open
+# manga4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# manga4.save
 
 manga5 = ArtClass.create!(title: "Creating Your Manga One-Shot", description: "Master inking techniques and learn to use screen tones to add depth and emotion to your manga artwork. Suitable for intermediate and advanced artists.", price: 6000, category: "Manga", location: "日本, 〒153-0063 東京都渋谷区 目黒#{rand(1..3)}丁目#{rand(1..10)}番#{rand(1..3)}号", dates: "25/02/27", user: james)
 file = URI.parse("https://clipboardartsupplies.com.au/wp-content/uploads/2019/11/AdobeStock_300188828-scaled.jpeg").open
