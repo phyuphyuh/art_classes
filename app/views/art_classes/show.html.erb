@@ -39,12 +39,23 @@
           <% end %>
         </nav>
       </div>
-      <div class="card-product">
-        <img src= "">
-        <div class="card-product-infos">
-          <h2>Product name</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-        </div>
+      <div>
+        <% if @art_class.reviews.any? %>
+          <div class="card-product">
+            <div class="card-product-infos">
+              <% @art_class.reviews.each do |review| %>
+                <%= review.user.name %>
+                <%= review.comment %>
+              <% end %>
+            </div>
+          </div>
+        <% else %>
+          <div class="card-product">
+            <div class="card-product-infos">
+              <h5>Ooops, this teacher has no reviews yet :(</h5>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class= "col-6">
