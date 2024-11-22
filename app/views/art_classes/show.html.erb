@@ -29,26 +29,18 @@
             <% end %>
           </nav>
         </div>
-        <nav class="bottom-navbar">
-          <% if current_user != @art_class.user  %>
-            <%= simple_form_for [@art_class, @reservation] do |f| %>
-              <%= f.submit class: 'submit-btn' %>
-            <% end %>
-          <% else %>
-            <p> You are the teacher! </p>
-          <% end %>
-        </nav>
       </div>
       <div>
         <% if @art_class.reviews.any? %>
-          <div class="card-product">
-            <div class="card-product-infos">
-              <% @art_class.reviews.each do |review| %>
+          <% @art_class.reviews.each do |review| %>
+            <div class="card-product">
+              <%= cl_image_tag review.user.photo.key%>
+              <div class="card-product-infos">
                 <%= review.user.name %>
                 <%= review.comment %>
-              <% end %>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% else %>
           <div class="card-product">
             <div class="card-product-infos">
